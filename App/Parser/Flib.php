@@ -2,6 +2,10 @@
 
 class Parser_Flib {
     
+    /**
+     * @desc Парсит всех авторов из базы на наличие новых книг
+     * @return void
+     */
     public static function index()
     {
         $query = \Gateway\Flibusta_Index::getAuthors();
@@ -24,6 +28,11 @@ class Parser_Flib {
         }
     }
     
+    /**
+     * @desc Возвращает обработанный запрос на добавление автора
+     * @param array $param массив параметров
+     * @return void
+     */
     public static function addAuthorId($param){
         $query = \Gateway\Flibusta_Index::addAuthor($param['id']);
                 

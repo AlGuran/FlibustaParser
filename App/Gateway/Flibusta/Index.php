@@ -4,6 +4,10 @@ namespace Gateway;
 
 class Flibusta_Index {
 
+    /**
+     * @desc Возвращает обработанный запрос на получение авторов
+     * @return string
+     */
     public static function getAuthors ()
     {
         $sql = "SELECT id FROM authors";
@@ -13,6 +17,11 @@ class Flibusta_Index {
         ]);
     }
 
+    /**
+     * @desc Возвращает обработанный запрос на добавление автора
+     * @param integer $id ID автора
+     * @return string
+     */
     public static function addAuthor ($id)
     {
         $sql = "INSERT INTO authors (id) VALUES (?id)";
@@ -22,6 +31,12 @@ class Flibusta_Index {
         ]);
     }
 
+    /**
+     * @desc Возвращает обработанный запрос на новых книг к автору
+     * @param array $ids
+     * @param integer $author_id
+     * @return string
+     */
     public static function addNewBooks ($ids, $author_id)
     {
         $sql = "INSERT INTO books (id,author_id)

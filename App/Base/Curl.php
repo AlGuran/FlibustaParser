@@ -2,6 +2,12 @@
 namespace Base;
 
 class Curl {
+    
+    /**
+     * @desc Возвращает html код страницы
+     * @param string $url URL страницы
+     * @return string
+     */
     public static function index($url)
     {
         $ch = curl_init();  
